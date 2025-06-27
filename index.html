@@ -164,6 +164,12 @@
             margin-bottom: 2rem;
         }
 
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
         .typed-text {
             color: var(--accent);
             font-weight: 700;
@@ -183,6 +189,27 @@
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(110, 142, 251, 0.6);
+        }
+
+        .btn-resume {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-resume:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .dark-mode .btn-resume {
+            color: var(--text-light);
+            border-color: var(--text-light);
+        }
+
+        .dark-mode .btn-resume:hover {
+            background: var(--text-light);
+            color: var(--dark);
         }
 
         /* ===== ABOUT SECTION ===== */
@@ -549,6 +576,11 @@
                 font-size: 2.5rem;
             }
 
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
             .about-content {
                 flex-direction: column;
             }
@@ -577,17 +609,22 @@
         </nav>
     </header>
 
-    <!-- ===== HERO SECTION ===== -->
+    <!-- ===== HERO SECTION (WITH RESUME BUTTON) ===== -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Hi, I'm <span>Medhansh</span></h1>
             <p><span class="typed-text"></span></p>
             <p>IIIT Sricity Student | Developer | Tech Enthusiast</p>
-            <a href="#projects" class="btn">View My Work</a>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="https://medhanshcv.tiiny.site/" download="Medhansh_Resume.pdf" class="btn btn-resume">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- ===== ABOUT SECTION ===== -->
+    <!-- ===== ABOUT SECTION (WITH RESUME BUTTON) ===== -->
     <section id="about" class="about">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
@@ -597,14 +634,24 @@
             <div class="about-text">
                 <h3>Who am I?</h3>
                 <p>
-                    I'm a passionate developer currently pursuing my BTech at IIIT Sricity though I am an ECE student. 
-                    I specialize in building web applications, solving complex problems, and exploring new technologies.
-                    I secured 1st prize in college lever Hackathon.
+                    I'm a passionate developer currently pursuing my BTech at IIIT Sricity, proudly representing the ECE department. 
+                    I specialize in building web applications, solving complex problems, and diving deep into emerging technologies.
+                    I secured 1st prize in a college-level Hackathon, proving my ability to turn ideas into impactful solutions.
                 </p>
                 <p>
                     My journey in tech began with my first "Hello World" program, and since then, 
-                    I've been obsessed with creating digital experiences that make an impact.
+                    I've been on a mission to craft digital experiences that matter.
                 </p>
+                <p>
+                    During my 1st year, I served as a Student Development Council (SDC) member, 
+                    where I actively contributed to organizing events, guiding peers, and enhancing campus tech culture. 
+                    This experience sharpened my communication, leadership, and team management skills.
+                </p>
+                <p>
+                    I'm not just about code—I believe in collaboration, innovation, and always pushing boundaries. 
+                    Whether it's leading a team or debugging at 2 AM, I'm all in. Let's build the future, one line of code at a time.
+                </p>
+
                 <div class="skills-list">
                     <span class="skill">Python</span>
                     <span class="skill">JavaScript</span>
@@ -614,7 +661,14 @@
                     <span class="skill">Node.js</span>
                     <span class="skill">Machine Learning</span>
                     <span class="skill">Git</span>
+                    <span class="skill">Team Management</span>
+                    <span class="skill">Project Management</span>
+                    <span class="skill">Effective Communication Skills</span>
                 </div>
+                
+                <a href="resume.pdf" download="Medhansh_Resume.pdf" class="btn btn-resume" style="margin-top: 1.5rem;">
+                    <i class="fas fa-file-pdf"></i> Download Full Resume
+                </a>
             </div>
         </div>
     </section>
@@ -653,6 +707,17 @@
                 <div class="project-links">
                     <a href="https://github.com/medhanshrao/bird-game" class="demo">Live Demo</a>
                     <a href="https://github.com/medhanshrao/bird-game" class="code">View Code</a>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card glass">
+                <a href="#" target="_blank"><img src="https://thumbs2.imgbox.com/54/0f/wU1eLTpU_t.jpg" alt="AI Crime Predictor"/></a>
+                <h3>Personal AI</h3>
+                <p>I've created my own AI for assistance, I made my own AI Assistant</p>
+                <div class="project-links">
+                    <a href="https://github.com/medhanshrao/personal-ai" class="demo">Live Demo</a>
+                    <a href="https://github.com/medhanshrao/personal-ai" class="code">View Code</a>
                 </div>
             </div>
         </div>
@@ -707,32 +772,32 @@
     </section>
 
     <!-- ===== CONTACT SECTION ===== -->
-<section id="contact" class="contact">
-    <h2 class="section-title">Get In Touch</h2>
-    <form class="contact-form" action="https://formspree.io/f/mqabwbzd" method="POST">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Your Email" required>
-        </div>
-        <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Send Message</button>
-    </form>
-</section>
+    <section id="contact" class="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <form class="contact-form" action="https://formspree.io/f/mqabwbzd" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
 
     <!-- ===== FOOTER ===== -->
     <footer class="glass">
         <div class="social-links">
-            <a href="https://github.com/medhanshrao"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/medhanshrao?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/medhanshrao" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/medhanshrao?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/medhansh.rao/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-facebook"></i></a>
         </div>
         <div class="footer-links">
@@ -813,37 +878,37 @@
         });
 
         // Form Submission with Formspree
-const contactForm = document.querySelector('.contact-form');
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const submitBtn = contactForm.querySelector('.submit-btn');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-    
-    try {
-        const response = await fetch(contactForm.action, {
-            method: 'POST',
-            body: new FormData(contactForm),
-            headers: {
-                'Accept': 'application/json'
+        const contactForm = document.querySelector('.contact-form');
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    alert('Message sent successfully!');
+                    contactForm.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                alert('Oops! Something went wrong. Please try again.');
+                console.error(error);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
             }
         });
-        
-        if (response.ok) {
-            alert('Message sent successfully!');
-            contactForm.reset();
-        } else {
-            throw new Error('Form submission failed');
-        }
-    } catch (error) {
-        alert('Oops! Something went wrong. Please try again.');
-        console.error(error);
-    } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
-    }
-});
 
         // Scroll Animations
         const animateOnScroll = () => {
